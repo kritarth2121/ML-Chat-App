@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import "./Login.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { auth, provider } from "../../firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
+import { Redirect } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const user = useSelector(selectUser);
 
   const signIn = () => {
     auth.signInWithPopup(provider).catch((e) => {
@@ -36,14 +40,17 @@ function Login() {
       })
       .catch((e) => alert(e.message));
   };
+  
   return (
+    <>
+    {user ? (<Redirect to="/" ></Redirect>) : (
     <div className="login">
       <div className="login__container">
         <div className="login__logo">
         </div>
         <div className="login__desc">
           <p style={{ color: "royalblue", fontSize: "25px" }}>
-          <h3>T && D</h3>
+          <h3>Chatting Application</h3>
           </p>
         </div>
         <div className="login__auth">
@@ -98,14 +105,14 @@ function Login() {
               </div>
             </div>
             <div className="login__forgButt">
-              <small>Forgot Password?</small>
+              {/* <small>Forgot Password?</small> */}
               <button onClick={handleSignIn}>Login</button>
             </div>
             <button onClick={registerSignIn}>Register</button>
           </div>
         </div>
         <div className="login__lang">
-          <p>हिन्दी</p>
+          <p>English</p>
           <ArrowForwardIosIcon fontSize="small" />
         </div>
         <div className="login__footer">
@@ -116,10 +123,12 @@ function Login() {
           <p>Privacy</p>
           <p>Terms</p>
           <p>Contact</p>
-          <p>&copy; Quora Fake Inc. 2021</p>
+          <p>&copy; Chatting app Inc. 2021</p>
         </div>
       </div>
     </div>
+    )}
+    </>
   );
 }
 
