@@ -124,7 +124,7 @@ function Login() {
           <p>Terms</p>
           <p>Contact</p>
           <p>&copy; Chatting app Inc. 2021</p>
-        </div>
+        </div>0
       </div>
     </div>
     )}

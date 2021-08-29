@@ -1,0 +1,4 @@
+/../*.js
+  cache-control: public
+  cache-control: max-age=365000000
+  cache-control: immutable
