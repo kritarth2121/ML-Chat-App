@@ -99,8 +99,8 @@ if (msgerChat.current){
 return(
   <div className="msger -mt-10  mx-4 ">
             <div className="msger-header ">
-                <div className="msger-header-title">
-                    <i className="fas fa-female"></i> Chatting Application
+                <div className="msger-header-title font-bold">
+                    <i className="fas fa-female"></i> Chatting Application,Dont use slangs like "u" for "you",use proper English  ,don't use other languages like hindi or german.
                     <i className="fas fa-female"></i>
                 </div>
             </div>

@@ -10,7 +10,7 @@ const Home: React.FC<props> = () =>{
 
         const z= setTimeout(()=>{
             setw(false);
-         },1000);
+         },2000);
          return ()=>clearTimeout(z);
     },[])
 return(<> 
