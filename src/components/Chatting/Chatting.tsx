@@ -7,7 +7,7 @@ interface props{
 }
 const Chatting: React.FC<props> = () =>{
     
-    
+    const [typing, settyping]=useState(false);
     const [inp, setinp] = useState("");
     const PERSON_IMG = defaultuser;
     //console.log("image");
@@ -84,6 +84,7 @@ if (msgerChat.current){
     function botResponse(rawText:string) {
         //console.log(BOT_IMG);
         // Bot Response
+        
         axios.get("https://chaljaabhai.azurewebsites.net/get", {headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "X-Requested-With"
@@ -92,7 +93,12 @@ if (msgerChat.current){
             console.log(data);
             const msgText = data.data;
             console.log(BOT_IMG);
-            appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+            settyping(true);
+            setTimeout(()=>{
+                settyping(false);
+                appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+            },1200);
+            
         });
     }
 
@@ -124,7 +130,7 @@ return(
                     </div>
                 </div>
             </main>
-
+{ typing? <div className="ml-5 m-2"> {BOT_NAME} is Typing</div> : <div></div>}
             <form className="msger-inputarea">
                 <input
                     type="text"
