@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Ripples from 'react-ripples'
+import Button from '@material-ui/core/Button';
+
 interface props {
   classes?:string;
   theme?: string;
@@ -8,7 +11,7 @@ interface props {
   onclick?: () => void;
   type?:"submit" | "button" | "reset" | undefined
 }
-const Button: React.FC<props> = ({
+const Butto: React.FC<props> = ({
   border,
   allow,
   children,
@@ -44,6 +47,7 @@ const Button: React.FC<props> = ({
 
   return (
     <div>
+      <Button  >
       <button type={type}
         onClick={ ()=>onclick && onclick()}
         className={
@@ -66,13 +70,16 @@ const Button: React.FC<props> = ({
         }
         // eslint-disable-next-line react/jsx-no-duplicate-props
       >
+        
         {children}
+        
       </button>
+      </Button>
     </div>
   );
 };
 
-Button.defaultProps = {
+Butto.defaultProps = {
   classes:"",
   theme: "Success",
   border: "Solidify",
@@ -81,4 +88,4 @@ Button.defaultProps = {
   type:"submit",
 };
 
-export default React.memo(Button);
+export default React.memo(Butto);

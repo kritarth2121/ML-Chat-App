@@ -11,6 +11,7 @@ export const questionSlice = createSlice({
       state.questionId = action.payload.questionId;
       state.questionName = action.payload.questionName;
     },
+    
   },
 });
 

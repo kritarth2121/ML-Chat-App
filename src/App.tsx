@@ -6,6 +6,7 @@ import Login from "./components/Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
+import Home from "./components/Home";
 
 interface props {}
 
@@ -38,7 +39,7 @@ const App: React.FC<props> = () => {
                 <Header></Header>
                 <Switch>
                 
-                    <Route exact path="/" component={Chatting}></Route>
+                    <Route exact path="/" component={Home}></Route>
                     <Route exact path="/login" component={Login}></Route>
                 </Switch>
         </>

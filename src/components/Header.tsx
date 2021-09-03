@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
-import Button from "./Button/Button";
+import Butto from "./Button/Button";
 interface props{
 }
 
@@ -14,9 +14,9 @@ const Header: React.FC<props> = () =>{
 return(<> 
 
   <div className="h-14 space-x-20 items-center  md:text-sm pl-10 fixed inset-0 flex w-full flex-row bg-gray-400"> 
-  <div > <Link to="" > <Button classes ="rounded-lg" theme="Warning">Chat with girl</Button></Link></div>
-  <div><Button classes ="rounded-lg"> Buy Premium</Button></div>
-  {user? (<div><Button onclick={() => auth.signOut()} classes ="rounded-lg"> Logout</Button></div>):<div> <Link to="/login" > <Button classes ="rounded-lg" theme="Info">Login</Button></Link></div> }
+  <div > <Link to="" > <Butto classes ="rounded-lg" theme="Warning">Chat with girl</Butto></Link></div>
+  <div><Butto classes ="rounded-lg"> Buy Premium</Butto></div>
+  {user? (<div><Butto onclick={() => auth.signOut()} classes ="rounded-lg"> Logout</Butto></div>):<div> <Link to="/login" > <Butto classes ="rounded-lg" theme="Info">Login</Butto></Link></div> }
   <div>
 
 { user?(<div><Avatar

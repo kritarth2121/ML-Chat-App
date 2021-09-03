@@ -1,10 +1,13 @@
 import axios, { AxiosResponse } from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import Fetching from "../Fetching";
 import "./Chatting.css";
 import defaultuser from "./defaultuser.png"
 interface props{
 }
 const Chatting: React.FC<props> = () =>{
+    
+    
     const [inp, setinp] = useState("");
     const PERSON_IMG = defaultuser;
     //console.log("image");
@@ -17,6 +20,7 @@ const Chatting: React.FC<props> = () =>{
     const Dates=useRef<HTMLDivElement>(null);
     const myDiv=useRef<HTMLDivElement>(null);
 useEffect(()=>{
+    
     fetch("https://randomuser.me/api/?gender=female")
     .then((response) => response.json())
     .then(function (data) {
@@ -34,7 +38,7 @@ useEffect(()=>{
         if(myDiv.current){
             myDiv.current.style.backgroundImage = `url(${JSON.stringify(data.results[0].picture.large) })`;}
     });
-
+    
 },[])
 
 function appendMessage(name: any, img: any, side: string, text: string) {
@@ -93,7 +97,6 @@ if (msgerChat.current){
     }
 
 return(
-<div className="bb relative mt-14" >
   <div className="msger -mt-10   ">
             <div className="msger-header ">
                 <div className="msger-header-title">
@@ -137,8 +140,7 @@ return(
         </div>
         
 
-
-         </div>
+    
 );
 }
 
