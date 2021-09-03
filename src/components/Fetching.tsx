@@ -8,7 +8,7 @@ const Fetching: React.FC<props> = () => {
             <div>
                 <img className=" " src={Loading_icon} alt="Loading" />
             </div>
-            <div className="mt-5 text-3xl font-medium w-1/2"> Fetching a girl for you,,,,Dont use slangs like "u" for "you",use proper English  ,don't use other languages like hindi or german.</div>
+            <div className="mt-5 text-xl font-medium w-1/2"> Fetching a girl for you,,,,Dont use slangs like "u" for "you",use proper English  ,don't use other languages like hindi or german.</div>
         </div>
     );
 };
