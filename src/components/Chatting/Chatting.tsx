@@ -4,7 +4,6 @@ import "./Chatting.css";
 import defaultuser from "./defaultuser.png"
 interface props{
 }
-
 const Chatting: React.FC<props> = () =>{
     const [inp, setinp] = useState("");
     const PERSON_IMG = defaultuser;
@@ -17,7 +16,6 @@ const Chatting: React.FC<props> = () =>{
     const Name=useRef<HTMLDivElement>(null);
     const Dates=useRef<HTMLDivElement>(null);
     const myDiv=useRef<HTMLDivElement>(null);
-
 useEffect(()=>{
     fetch("https://randomuser.me/api/?gender=female")
     .then((response) => response.json())
@@ -82,7 +80,7 @@ if (msgerChat.current){
     function botResponse(rawText:string) {
         //console.log(BOT_IMG);
         // Bot Response
-        axios.get("http://ec2-65-0-110-124.ap-south-1.compute.amazonaws.com:8080/get", {headers: {
+        axios.get("https://chaljaabhai.azurewebsites.net/get", {headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "X-Requested-With"
             },params:{ msg: rawText }}).then(function (data) {
