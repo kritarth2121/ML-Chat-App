@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import firebase from "firebase";
 
-const analytics = firebase.analytics();
-firebase.analytics().logEvent('notification_received');
+
 
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,7 +23,8 @@ firebase.analytics().logEvent('notification_received');
     const pr = new firebase.auth.FacebookAuthProvider();
     
     const db = firebaseApp.firestore();
-    
+    const analytics = firebase.analytics();
+firebase.analytics().logEvent('notification_received');
     export { auth, provider,pr };
     export default db;
     
