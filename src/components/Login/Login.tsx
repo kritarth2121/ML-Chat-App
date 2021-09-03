@@ -111,7 +111,7 @@ function Login() {
                                 </span>
                             </h1>
                             <h2 className="mt-5">
-                                {!register ? "New Here?" : ""}
+                                {!register ? "New Here ?  " : ""}
                                 <span
                                     onClick={() => setRegister(!register)}
                                     className="underline inline text-blue-700 cursor-pointer"

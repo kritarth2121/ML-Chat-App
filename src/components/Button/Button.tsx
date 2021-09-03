@@ -50,7 +50,7 @@ const Butto: React.FC<props> = ({
       <button type={type}
         onClick={ ()=>onclick && onclick()}
         className={
-          classes + " hover:shadow-xl border-2   py-1 px-2 rounded focus:outline-none focus:shadow-outline " +
+          classes + " hover:shadow-xl   py-1 px-2 rounded focus:outline-none focus:shadow-outline " +
           (allow
             ? "bg-" +
               color +

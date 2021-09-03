@@ -13,7 +13,7 @@ const Header: React.FC<props> = () =>{
 
 return(<> 
 
-  <div className="h-14 md:space-x-20 items-center  md:text-sm md:pl-10 fixed inset-0 flex w-full flex-row bg-gray-400"> 
+  <div className="h-14 md:space-x-20 items-center  md:text-sm md:pl-10 fixed inset-0 flex w-full flex-row bg-gray-700"> 
   <div > <Link to="" > <Butto classes ="rounded-lg" theme="Warning">Chat with girl</Butto></Link></div>
   <div><Butto classes ="rounded-lg"> Buy Premium</Butto></div>
   {user? (<div><Butto onclick={() => auth.signOut()} classes ="rounded-lg"> Logout</Butto></div>):<div> <Link to="/login" > <Butto classes ="rounded-lg" theme="Info">Login</Butto></Link></div> }
