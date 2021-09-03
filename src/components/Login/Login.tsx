@@ -101,7 +101,7 @@ function Login() {
                 <Redirect to="/"></Redirect>
             ) : (
                 <div className="login">
-                    <div className="login__container m-4 mt-20">
+                    <div className="login__container m-4  md:mt-4 mt-64">
                         <div className="login__logo"></div>
                         <div className="login__desc text-center">
                             <h1 className="text-4xl ">
@@ -110,7 +110,7 @@ function Login() {
                                     Website
                                 </span>
                             </h1>
-                            <h2 className="mt-5">
+                            <h2 className="mt-5 text-2xl">
                                 {!register ? "New Here ?  " : ""}
                                 <span
                                     onClick={() => setRegister(!register)}
@@ -122,7 +122,7 @@ function Login() {
                                 </span>{" "}
                             </h2>
                         </div>
-                        <div className="login__auth flex flex-col md:flex-row justify-evenly">
+                        <div className="login__auth flex flex-col-reverse md:flex-row justify-evenly items-center ">
                             <div className="login__authOptions md:border-r-2">
                                 <div className="login__authOption">
                                     <img
@@ -166,6 +166,7 @@ function Login() {
                                     </p>
                                 </div>
                             </div>
+                            <div className="md:hidden font-bold text-3xl my-8">OR</div> 
                             <div className=" text-left  flex flex-col  items-center ">
                                 <div className="">
                                     <form
