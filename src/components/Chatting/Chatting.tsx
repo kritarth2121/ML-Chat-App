@@ -97,7 +97,7 @@ if (msgerChat.current){
     }
 
 return(
-  <div className="msger -mt-10   ">
+  <div className="msger -mt-10  mx-4 ">
             <div className="msger-header ">
                 <div className="msger-header-title">
                     <i className="fas fa-female"></i> Chatting Application
