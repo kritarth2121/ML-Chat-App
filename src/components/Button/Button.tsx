@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Ripples from 'react-ripples'
+import React  from "react";
 import Button from '@material-ui/core/Button';
 
 interface props {
@@ -23,7 +22,7 @@ const Butto: React.FC<props> = ({
   let color = "";
   let textcolor = "";
 
-  let b = "";
+  //let b = "";
 
   if (theme === "Info") {
     color = "blue";

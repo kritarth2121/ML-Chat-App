@@ -1,6 +1,5 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import Fetching from "../Fetching";
 import "./Chatting.css";
 import defaultuser from "./defaultuser.png"
 interface props{
