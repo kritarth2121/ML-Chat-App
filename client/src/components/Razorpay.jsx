@@ -13,7 +13,7 @@ export class Razorpay extends Component {
   }
 
   async razorPayPaymentHandler() {
-    const API_URL = `http://localhost:5000/razorpay/`
+    const API_URL = `https://razorpayapi2121.azurewebsites.net/razorpay/`
     const orderUrl = `${API_URL}order`;
     const response = await Axios.get(orderUrl);
     const { data } = response;
