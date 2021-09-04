@@ -2,6 +2,7 @@ import { Avatar } from "@material-ui/core";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getPremium } from "../features/questionSlice";
 import { selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
 import Butto from "./Button/Button";
@@ -11,14 +12,22 @@ interface props{
 
 const Header: React.FC<props> = () =>{
   const user = useSelector(selectUser);
-
+const premium=useSelector(getPremium);
+console.log("premium",  premium);
+var premiumText="";
+if (premium){
+  premiumText="You are a premium user"
+}
+else{
+  premiumText="You are not a premium user"
+}
 return(<> 
 
-  <div className="h-14 md:space-x-20 items-center  md:text-sm md:pl-10 fixed inset-0 flex w-full flex-row bg-gray-800"> 
+  <div className="h-14 md:space-x-20 items-center text-white md:text-sm md:pl-10 fixed inset-0 flex w-full flex-row bg-gray-800"> 
   <div > <Link to="" > <Butto classes ="rounded-lg" theme="Warning">Chat with girl</Butto></Link></div>
   <Razorpay/>
-  <div><a target="blank" href="https://rzp.io/l/nIHd4hD"> <Butto classes ="rounded-lg">  Donate us</Butto> </a></div>
-  {user? (<div><Butto onclick={() => auth.signOut()} classes ="rounded-lg"> Logout</Butto></div>):<div> <Link to="/login" > <Butto classes ="rounded-lg" theme="Info">Login</Butto></Link></div> }
+  <div><a target="blank" href="https://rzp.io/l/nIHd4hD"> <Butto classes ="rounded-lg" theme="Info">  Donate us</Butto> </a></div>
+  {user? (<><div><Butto onclick={() => auth.signOut()} classes ="rounded-lg"> Logout</Butto></div> <div> { premiumText}</div> </> ):<div> <Link to="/login" > <Butto classes ="rounded-lg" theme="Success">Login</Butto></Link></div> }
   <div>
 
 { user?(<div><Avatar

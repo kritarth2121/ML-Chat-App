@@ -13,7 +13,7 @@ const razorInstance = new Razorpay({
 router.get("/order",(req,res)=>{
   try{
     const options ={
-      amount : 100*100,
+      amount : 1*100,
       currency : "INR",
       receipt: "receipt#1",
       payment_capture: 0, //1
@@ -42,7 +42,7 @@ router.post("/capture/:paymentId",(req,res)=>{
         method : "POST",
         url : `https://${keys.razorIdkey}:${keys.razorIdSecret}@api.razorpay.com/v1/payments/${req.params.paymentId}/capture`,
         form:{
-          amount : 100 *100,
+          amount : 1 *100,
           currency: "INR"
         },
       },
