@@ -1,9 +1,8 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPremium } from "../features/questionSlice";
-import { selectUser } from "../features/userSlice";
+import { getPremium, selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
 import Butto from "./Button/Button";
 import Razorpay from "./Razorpay";
@@ -14,18 +13,22 @@ const Header: React.FC<props> = () =>{
   const user = useSelector(selectUser);
 const premium=useSelector(getPremium);
 console.log("premium",  premium);
-var premiumText="";
-if (premium){
-  premiumText="You are a premium user"
-}
-else{
-  premiumText="You are not a premium user"
-}
+
+  const[ premiumText,setPremiumText]=useState("");
+useEffect(()=>{
+  if (premium){
+    setPremiumText("You are a premium user")
+  }
+  else{
+    setPremiumText("You are not a premium user")
+  }
+},[premium])
+
 return(<> 
 
   <div className="h-14 md:space-x-20 items-center text-white md:text-sm md:pl-10 fixed inset-0 flex w-full flex-row bg-gray-800"> 
   <div > <Link to="" > <Butto classes ="rounded-lg" theme="Warning">Chat with girl</Butto></Link></div>
-  <Razorpay/>
+  {!premium? <Razorpay/> :<></>}
   <div><a target="blank" href="https://rzp.io/l/nIHd4hD"> <Butto classes ="rounded-lg" theme="Info">  Donate us</Butto> </a></div>
   {user? (<><div><Butto onclick={() => auth.signOut()} classes ="rounded-lg"> Logout</Butto></div> <div> { premiumText}</div> </> ):<div> <Link to="/login" > <Butto classes ="rounded-lg" theme="Success">Login</Butto></Link></div> }
   <div>

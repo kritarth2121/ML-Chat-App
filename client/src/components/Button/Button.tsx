@@ -19,7 +19,6 @@ const Butto: React.FC<props> = ({
     type,
     classes,
 }) => {
-    console.log(onclick);
     let color = "";
     let textcolor = "";
 
@@ -42,7 +41,7 @@ const Butto: React.FC<props> = ({
     } else if (border === "Outline") {
         textcolor = color;
         color = "white ";
-        console.log(textcolor, color, theme);
+        //console.log(textcolor, color, theme);
     }
 
     return (

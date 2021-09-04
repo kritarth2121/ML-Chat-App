@@ -3,20 +3,19 @@ import Header from "./components/Header";
 import { Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout, selectUse, selectUser } from "./features/userSlice";
+import { getPremium, login, logout,  selectUser, setPremiumInfo } from "./features/userSlice";
 import db, { auth } from "./firebase";
 
 import Home from "./components/Home";
-import { setQuestionInfo } from "./features/questionSlice";
 
 interface props {}
 
 const App: React.FC<props> = () => {
     const user = useSelector(selectUser);
     const dispatch = useDispatch();
-    
+    var premi=useSelector(getPremium);
     useEffect(() => {
-        var premi=false;
+        
         auth.onAuthStateChanged((authUser) => {
 
             if (authUser) {
@@ -29,9 +28,10 @@ const App: React.FC<props> = () => {
 
                     }
                     else{
-                        console.log( " uid  in data");
                         premi=  doc.data()?.premium;
+                        console.log( " uid  in data",doc.data()?.premium,premi);
                     }
+                    dispatch(setPremiumInfo(premi));
                 })
                 // if (!(authUser.uid in citiesRef)){
                 //     citiesRef.doc(authUser.uid).set({premium:false});
@@ -49,14 +49,15 @@ const App: React.FC<props> = () => {
                         
                     })
                 );
+                console.log("BEfore Premium state",premi);
                 
-                dispatch(setQuestionInfo({premi}));
+                console.log("After Premium state",premi);
             } else {
                 dispatch(logout());
             }
             //console.log(authUser);
         });
-    }, [dispatch]);
+    }, [dispatch,premi]);
 
     return (
         <>

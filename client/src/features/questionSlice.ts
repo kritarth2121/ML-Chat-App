@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const questionSlice = createSlice({
   name: "question",
   initialState: {
-    premium:null
+    premium:false
     // questionId: null,
     // questionName: null,
   },
@@ -19,7 +19,7 @@ export const questionSlice = createSlice({
 
 export const { setQuestionInfo } = questionSlice.actions;
 
-export const getPremium = (state:any) => state.premium;
+//export const getPremium = (state:any) => state.question.premium;
 // export const selectQuestionName = (state:any) => state.question.questionName;
 
 export default questionSlice.reducer;
