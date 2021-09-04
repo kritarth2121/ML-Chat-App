@@ -18,7 +18,13 @@ return(<>
   <div className="bb relative mt-14" >
 
   {w? <Fetching/>: <Chatting/>}
-
+  <div>
+  <script type="text/javascript" >
+      var aax_size='300x250';
+      var aax_pubname = 'kt025-21';
+      var aax_src='302';
+    </script>
+    <script type="text/javascript"  src="https://c.amazon-adsystem.com/aax2/assoc.js"></script></div>
 </div>
   </>
 );
