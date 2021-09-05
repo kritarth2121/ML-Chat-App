@@ -72,7 +72,7 @@ return(<>
               <div className="relative ">
               <Dialog
           as="div"
-          className="fixed inset-0 top-10 right-5  overflow-y-auto"
+          className="fixed inset-0 top-10 right-5 "
           onClose={()=>{}}
         >
               <Transition 
