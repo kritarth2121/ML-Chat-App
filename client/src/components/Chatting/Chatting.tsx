@@ -196,6 +196,7 @@ return(
           </div>
         </Dialog>
       </Transition>
+      
             <div className="msger-header ">
                 <div className="msger-header-title font-bold">
                     <i className="fas fa-female"></i> Chatting Application,Dont use slangs like "u" for "you",use proper English  ,don't use other languages like hindi or german.

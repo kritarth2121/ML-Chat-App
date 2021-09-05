@@ -25,10 +25,10 @@
     height: 100vh;
     background-image: var(--body-bg);
     font-family: Helvetica, sans-serif;
-    z-index: -10;
   }
   
   .msger {
+    z-index: -10;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
