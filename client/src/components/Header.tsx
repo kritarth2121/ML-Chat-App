@@ -17,7 +17,7 @@ console.log("premium",  premium);
   const[ premiumText,setPremiumText]=useState("");
 useEffect(()=>{
   if (premium){
-    setPremiumText("You are a premium user")
+    setPremiumText("You are a premium user,talk unlimited")
   }
   else{
     setPremiumText("You are not a premium user")
@@ -29,7 +29,6 @@ return(<>
   <div className="h-14 md:space-x-20 items-center text-white md:text-sm md:pl-10 fixed inset-0 flex w-full flex-row bg-gray-800"> 
   <div > <Link to="" > <Butto classes ="rounded-lg" theme="Warning">Chat with girl</Butto></Link></div>
   {!premium? <Razorpay/> :<></>}
-  <div><a target="blank" href="https://rzp.io/l/nIHd4hD"> <Butto classes ="rounded-lg" theme="Info">  Donate us</Butto> </a></div>
   {user? (<><div><Butto onclick={() => auth.signOut()} classes ="rounded-lg"> Logout</Butto></div> <div> { premiumText}</div> </> ):<div> <Link to="/login" > <Butto classes ="rounded-lg" theme="Success">Login</Butto></Link></div> }
   <div>
 
@@ -44,6 +43,8 @@ return(<>
         /></div>): <div></div>}
     
     </div>
+    <div className=" "><a target="blank" href="https://rzp.io/l/nIHd4hD"> <Butto classes ="rounded-lg" theme="Info">  Donate us</Butto> </a></div>
+
   
   </div>
 
