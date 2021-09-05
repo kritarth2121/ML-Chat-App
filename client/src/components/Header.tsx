@@ -63,13 +63,14 @@ return(<>
         <div className=" md:hidden">{premiumText }</div>
 
   <div className=" md:hidden text-right  relative z-50">
-            <Menu as="div" className="relative inline-block text-left">
+            <Menu as="div" className="relative inline-block text-left z-50">
               <div>
                 <Menu.Button className="text-black"><i className="bg-white text-2xl fas fa-bars"></i>
 
 </Menu.Button>
               </div>
-              <Transition
+              <div className="z-50">
+              <Transition 
                 as={Fragment}
                 enter="transition ease-out duration-100"
                 enterFrom="transform opacity-0 scale-95"
@@ -78,7 +79,8 @@ return(<>
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+
+                <Menu.Items className="absolute right-0 z-50 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="px-1 py-1 ">
                     <Menu.Item>
                       {({ active }) => (
@@ -155,6 +157,7 @@ return(<>
                   </div>
                 </Menu.Items>
               </Transition>
+              </div>
             </Menu>
           </div>
   </div>

@@ -121,11 +121,11 @@ if (msgerChat.current){
     }
 
 return(
-  <div className="msger -mt-10  mx-4 ">
+  <div className="msger -mt-10  mx-4 xxx">
             <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 z-10 overflow-y-auto"
+          className="fixed inset-0  overflow-y-auto"
           onClose={openModal}
         >
                   <Dialog.Overlay className="fixed inset-0 bg-black opacity-60" />
