@@ -20,7 +20,7 @@ const Razorpay : React.FC<props> = () => {
       return;
     }
 
-    //cconst API_URL=`http://localhost:5000/razorpay/`
+    //const API_URL=`http://localhost:5000/razorpay/`
     const API_URL = `https://razorpayapi2121.azurewebsites.net/razorpay/`
     const orderUrl = `${API_URL}order`;
     const response = await Axios.get(orderUrl);
@@ -30,8 +30,8 @@ const Razorpay : React.FC<props> = () => {
 
     const options = {
       key: 'rzp_live_OgpgPeLThwTOSQ',
-      name: "Buy Premium",
-      description: "",
+      name: "Buy Premium for Lifetime",
+      description: "Use Unlimited",
       order_id: data.id,
       handler: async (response:any) => {
         try {

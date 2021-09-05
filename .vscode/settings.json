@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4ecc29cb-2692-4d30-a210-3893f715018b/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/razorpayapi2121",
+    "appService.deploySubpath": "server"
+}
