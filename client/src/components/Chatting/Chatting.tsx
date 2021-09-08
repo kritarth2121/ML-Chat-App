@@ -103,7 +103,7 @@ if (msgerChat.current){
         if (num>=15 && !premium ){
             openModal()
          }
-        axios.get("https://chaljaabhai.azurewebsites.net/get", {headers: {
+        axios.get("https://kritarthmlforchat.azurewebsites.net/get", {headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "X-Requested-With"
             },params:{ msg: rawText }}).then(function (data) {
@@ -115,7 +115,7 @@ if (msgerChat.current){
             setTimeout(()=>{
                 settyping(false);
                 appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-            },1200);
+            },2000);
             
         });
     }
@@ -199,7 +199,7 @@ return(
       
             <div className="msger-header ">
                 <div className="msger-header-title font-bold">
-                    <i className="fas fa-female"></i> Chatting Application,Dont use slangs like "u" for "you",use proper English  ,don't use other languages like hindi or german.
+                    <i className="fas fa-female"></i> Chatting Application,Dont use slangs ,Use proper English  ,don't use other languages like Hindi or German.
                     <i className="fas fa-female"></i>
                 </div>
             </div>
