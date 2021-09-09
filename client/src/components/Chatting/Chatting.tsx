@@ -96,7 +96,7 @@ const Chatting: React.FC<props> = () => {
         //console.log(BOT_IMG);
         // Bot Response
         setNum((num) => num + 1);
-        if (num >= 1 && !premium) {
+        if (num >= 10 && !premium) {
             openModal();
         }
         axios
